@@ -1,0 +1,66 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title{Masterclass: Tax and Transfer Policy Evaluation}
+\subtitle{Session 1: Structures In and Structures Out}
+\author{Max Blesch}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Where to Find GETTSIM}
+  \begin{itemize}
+    \item Documentation (user-facing): \texttt{https://gettsim.readthedocs.io}
+    \item Source code and issues: \texttt{https://github.com/ttsim-dev/gettsim}
+    \item Personas package: \texttt{https://github.com/ttsim-dev/gettsim-personas}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{GEPs: Why They Matter}
+  \begin{itemize}
+    \item GEPs are GETTSIM Enhancement Protocols: architecture and style rules.
+    \item Key ones for users:
+    \begin{itemize}
+      \item GEP-07: user interface and \texttt{main()}.
+      \item GEP-06: namespaces and qualified names.
+      \item GEP-01/02: naming and data structure conventions.
+      \item GEP-04: DAG-based computation model.
+    \end{itemize}
+    \item Use GEPs when API behavior seems non-obvious.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Session Workflow Around \texttt{main()}}
+  \begin{itemize}
+    \item Set \texttt{policy\_date\_str} first.
+    \item Choose \texttt{main\_target} (what should come back).
+    \item Provide \texttt{input\_data} (DataFrame+mapper or tree).
+    \item Define \texttt{tt\_targets} (what to compute).
+    \item Run and inspect outputs or missing-input diagnostics.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Diagnostic Workflow (Notebook)}
+  \begin{itemize}
+    \item Start with a small target set.
+    \item Run once and read missing roots.
+    \item Add coherent branches (not random leaves).
+    \item Re-run and compare reduced missing lists.
+    \item Use personas once the concept is clear.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What is \texttt{gettsim-personas}?}
+  \begin{itemize}
+    \item A collection of stylized household setups for GETTSIM.
+    \item It provides coherent \texttt{input\_data\_tree} and often useful target bundles.
+    \item In class: ideal for robust runs after learning custom DataFrame mapping.
+  \end{itemize}
+\end{frame}
+\end{document}

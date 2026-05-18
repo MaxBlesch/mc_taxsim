@@ -1,0 +1,17 @@
+name: mc_gettsim
+
+channels:
+  - conda-forge
+
+
+dependencies:
+  - python
+  - gettsim
+  - pandas
+  - numpy
+  - matplotlib
+  - jupyterlab
+  - ipykernel
+  - pip
+  - pip:
+      - git+https://github.com/ttsim-dev/gettsim-personas.git

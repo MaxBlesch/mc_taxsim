@@ -1,0 +1,71 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title{Masterclass: Tax and Transfer Policy Evaluation}
+\subtitle{Session 2: Policy Reforms in Practice}
+\author{Max Blesch}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Session Goal}
+  \begin{itemize}
+    \item Implement and interpret two reform types in GETTSIM.
+    \item Parameter reform: change policy values in the environment.
+    \item Function reform: change policy logic via a replacement function.
+    \item Compare baseline and reform outcomes transparently.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Two Reform Layers}
+  \begin{itemize}
+    \item \texttt{policy\_environment} is the reform object.
+    \item Parameter reform: replace a parameter object/value.
+    \item Function reform: replace a \texttt{@policy\_function} node.
+    \item Rule of thumb:
+      \begin{itemize}
+        \item change \emph{value} $\rightarrow$ parameter,
+        \item change \emph{rule} $\rightarrow$ function.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Parameter Reform (Notebook A)}
+  \begin{itemize}
+    \item Build \texttt{status\_quo\_environment}.
+    \item Copy environment with \texttt{copy\_environment(...)}.
+    \item Replace \texttt{arbeitnehmerpauschbetrag}.
+    \item Re-run and compare income tax baseline vs reform.
+    \item Sweep over possible values and plot tax response.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Function Reform (Notebook B)}
+  \begin{itemize}
+    \item Copy baseline environment.
+    \item Replace \texttt{kinderfreibetrag\_günstiger\_sn}.
+    \item Reform setting: function always returns \texttt{False}.
+    \item Re-run with same inputs and targets.
+    \item Compare tax deltas to baseline.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Verification and Reference}
+  \begin{itemize}
+    \item Structural check: object/function replaced in environment?
+    \item Behavioral check: outputs move in expected direction?
+    \item Isolation check: what changed and what stayed stable?
+    \item Extensive tutorial:
+      \begin{itemize}
+        \item \texttt{https://gettsim.readthedocs.io/en/stable/how\_to\_guides/modifications\_of\_policy\_environments.html}
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\end{document}
